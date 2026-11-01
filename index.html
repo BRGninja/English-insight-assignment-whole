@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English insight assignment</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      background: #fff9e8;
+      color: #49330c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    main {
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 2rem;
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
+    }
+
+    .honeycomb {
+      --size: clamp(5rem, 18vw, 8rem);
+      --gap: clamp(0.75rem, 2vw, 1.25rem);
+      --orbit: calc(var(--size) + var(--gap));
+      --diagonal: calc(var(--orbit) * 0.866);
+      --half-orbit: calc(var(--orbit) * 0.5);
+      position: relative;
+      width: calc(var(--size) + var(--orbit) * 1.732);
+      height: calc(var(--size) + var(--orbit) * 2);
+      margin: 0 auto;
+    }
+
+    .circle {
+      position: absolute;
+      width: var(--size);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      padding: 0.5rem;
+      color: inherit;
+      text-align: center;
+      text-decoration: none;
+      border: 4px solid #b87512;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ffeaa1, #f6b938 72%);
+      box-shadow: 0 5px 12px #8b5b1628;
+      font-size: clamp(0.7rem, 2vw, 0.95rem);
+      font-weight: 700;
+      transform: translate(-50%, -50%);
+    }
+
+    .circle:hover,
+    .circle:focus-visible {
+      background: radial-gradient(circle at 35% 30%, #fff2bd, #e99a18 72%);
+      outline: 3px solid #49330c;
+      outline-offset: 3px;
+    }
+
+    .circle:nth-child(1) { top: 50%; left: 50%; }
+    .circle:nth-child(2) { top: calc(50% - var(--orbit)); left: 50%; }
+    .circle:nth-child(3) { top: calc(50% - var(--half-orbit)); left: calc(50% + var(--diagonal)); }
+    .circle:nth-child(4) { top: calc(50% + var(--half-orbit)); left: calc(50% + var(--diagonal)); }
+    .circle:nth-child(5) { top: calc(50% + var(--orbit)); left: 50%; }
+    .circle:nth-child(6) { top: calc(50% + var(--half-orbit)); left: calc(50% - var(--diagonal)); }
+    .circle:nth-child(7) { top: calc(50% - var(--half-orbit)); left: calc(50% - var(--diagonal)); }
+
+    @media (max-width: 480px) {
+      .honeycomb {
+        --size: 4.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>What makes you, you?</h1>
+    <nav class="honeycomb" aria-label="Choose a topic to visit its page">
+      <a class="circle" href="circle-1.html">Brendan Guy</a>
+      <a class="circle" href="circle-2.html">Experiences</a>
+      <a class="circle" href="circle-3.html">Goals</a>
+      <a class="circle" href="circle-4.html">Family</a>
+      <a class="circle" href="circle-5.html">Values</a>
+      <a class="circle" href="circle-6.html">Interests</a>
+      <a class="circle" href="circle-7.html">School</a>
+    </nav>
+  </main>
+</body>
+</html>
